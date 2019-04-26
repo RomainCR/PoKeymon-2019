@@ -37,8 +37,6 @@ export default class Pokemon extends Component {
         attack: '',
         defense: '',
         speed: '',
-        specialAttack: '',
-        specialDefense: '',
       },
       themeColor: '#EF5350',
       redirect: false,
@@ -60,7 +58,7 @@ export default class Pokemon extends Component {
     const imageUrl = pokemonRes.data.sprites.front_default;
 
     let {
-      hp, attack, defense, speed, specialAttack, specialDefense,
+      hp, attack, defense, speed,
     } = '';
 
     // eslint-disable-next-line array-callback-return
@@ -77,12 +75,6 @@ export default class Pokemon extends Component {
           break;
         case 'speed':
           speed = stat.base_stat;
-          break;
-        case 'special-attack':
-          specialAttack = stat.base_stat;
-          break;
-        case 'special-defense':
-          specialDefense = stat.base_stat;
           break;
         default:
           break;
@@ -102,8 +94,6 @@ export default class Pokemon extends Component {
         attack,
         defense,
         speed,
-        specialAttack,
-        specialDefense,
       },
       themeColor,
     });
@@ -141,7 +131,7 @@ export default class Pokemon extends Component {
         <div className="card">
           <div className="card-body">
             <div className="row align-items-center">
-              <div className=" col-md-12">
+              <div className="col-md-12">
                 <h1 className="namePokemon">
                   {name
                     .toLowerCase()
@@ -150,7 +140,7 @@ export default class Pokemon extends Component {
                     .join(' ')}
                 </h1>
               </div>
-              <div className=" col-md-3">
+              <div className="col-md-3">
                 <img
                   src={imageUrl}
                   className="card-img-top rounded mx-auto mt-2 imgPokemon"
@@ -158,7 +148,7 @@ export default class Pokemon extends Component {
                 />
               </div>
               <div className="col-md-9">
-                <div className="row align-items-center">
+                <div className="row align-items-center customStats">
                   <div className={`col-12 col-md-${statTitleWidth}`}>
                     HP
                   </div>
@@ -180,7 +170,7 @@ export default class Pokemon extends Component {
                     </div>
                   </div>
                 </div>
-                <div className="row align-items-center">
+                <div className="row align-items-center customStats">
                   <div className={`col-12 col-md-${statTitleWidth}`}>
                     Attack
                   </div>
@@ -202,7 +192,7 @@ export default class Pokemon extends Component {
                     </div>
                   </div>
                 </div>
-                <div className="row align-items-center">
+                <div className="row align-items-center customStats">
                   <div className={`col-12 col-md-${statTitleWidth}`}>
                     Defense
                   </div>
@@ -224,7 +214,7 @@ export default class Pokemon extends Component {
                     </div>
                   </div>
                 </div>
-                <div className="row align-items-center">
+                <div className="row align-items-center customStats">
                   <div className={`col-12 col-md-${statTitleWidth}`}>
                     Speed
                   </div>
@@ -242,50 +232,6 @@ export default class Pokemon extends Component {
                         aria-valuemax="100"
                       >
                         <small>{stats.speed}</small>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="row align-items-center">
-                  <div className={`col-12 col-md-${statTitleWidth}`}>
-                    Sp Atk
-                  </div>
-                  <div className={`col-12 col-md-${statBarWidth}`}>
-                    <div className="progress">
-                      <div
-                        className="progress-bar "
-                        role="progressbar"
-                        style={{
-                          width: `${stats.specialAttack}%`,
-                          backgroundColor: `#${themeColor}`,
-                        }}
-                        aria-valuenow={stats.specialAttack}
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      >
-                        <small>{stats.specialAttack}</small>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="row align-items-center">
-                  <div className={`col-12 col-md-${statTitleWidth}`}>
-                    Sp Def
-                  </div>
-                  <div className={`col-12 col-md-${statBarWidth}`}>
-                    <div className="progress">
-                      <div
-                        className="progress-bar "
-                        role="progressbar"
-                        style={{
-                          width: `${stats.specialDefense}%`,
-                          backgroundColor: `#${themeColor}`,
-                        }}
-                        aria-valuenow={stats.specialDefense}
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      >
-                        <small>{stats.specialDefense}</small>
                       </div>
                     </div>
                   </div>
