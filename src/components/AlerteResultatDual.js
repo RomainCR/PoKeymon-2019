@@ -35,7 +35,7 @@ class AlerteResultat extends React.Component {
   }
 
   refreshPage = () => {
-    window.location.reload(true);
+    window.location.reload();
   }
 
   handleClose() {
