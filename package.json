@@ -2,13 +2,10 @@
   "name": "pokeymon",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://romaincr.github.io/PoKeymon-2019/",
-  
   "dependencies": {
     "arrow-keys-react": "^1.0.6",
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
-    "gh-pages": "^2.0.1",
     "node-sass": "^4.11.0",
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.6",
@@ -26,13 +23,11 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "precommit": "npm run lint-all",
     "lint-all": "eslint src",
-    "lint-jsx": "eslint src/**/*.jsx" 
+    "lint-jsx": "eslint src/**/*.jsx"
   },
   "eslintConfig": {
     "extends": "airbnb",

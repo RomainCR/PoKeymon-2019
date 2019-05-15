@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import { HashRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Login from './components/Login';
 import Home from './pages/Home';
@@ -19,7 +19,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <HashRouter>
+        <BrowserRouter>
           <header className="App-header">
             <Switch>
               <Route exact path="/" component={Home} />
@@ -29,7 +29,7 @@ class App extends Component {
               <Route path="/Login" component={Login} />
             </Switch>
           </header>
-        </HashRouter>
+        </BrowserRouter>
       </div>
     );
   }
